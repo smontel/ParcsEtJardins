@@ -1,0 +1,28 @@
+.header {
+    height: 200px;
+    background-color: green;
+}
+.ville{
+  list-style-type: none;
+  width:400px;
+  background-color:pink;
+}
+#NomParc ul{
+  display: none;
+  list-style-type: none;
+
+}
+
+#NomParc ul.shown{
+  display:block;
+  float:left;
+  width : 100%;
+}
+.Parc{
+  background-color: red;
+}
+#map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      }

@@ -1,56 +1,40 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
     <title>Parcs et Jardins</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="app.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 </head>
+
 <body>
-  <a id="dataLoading" href="#">Chargement des données</a>
-    <div id ="myTablePlaceholder"></div>
-    <script type="text/javascript">
-      //callback method
-      function AdditionalData_Loaded(data)
-      {
-        //create a table
-        var placeholder=document.getElementById("myTablePlaceholder");
-        var table=document.createElement('TABLE');
-        var tbdy=document.createElement('TBODY');
-        table.appendChild(tbdy);
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 header"> <h1>Les parcs et Jardins de Provence</h1>
 
-        //for each row in the table add the cell contents
-        for (var i=1; i < data.d.length; i++)
-        {
-            var tr=document.createElement('TR');
-            tbdy.appendChild(tr);
-            tr.appendChild(AddCellContents(data.d, i,'raisonsociale'));
-            tr.appendChild(AddCellContents(data.d, i,'soustype'));
-            tr.appendChild(AddCellContents(data.d, i,'codepostal'));
-            tr.appendChild(AddCellContents(data.d, i,'ville'));
-            tr.appendChild(AddCellContents(data.d, i,'latitude'));
-            tr.appendChild(AddCellContents(data.d, i,'longitude'));
-        }
-        //add the table to page
-        placeholder.appendChild(table);
-      }
+            </div>
+            <div class="row">
+                    <div id="cities" class="col-md-3">
 
-      //add cell contents to the table
-      function AddCellContents(data, cell, id)
-      {
-          var td=document.createElement('TD');
-          var dataCell = data[cell][id];
-          td.appendChild(document.createTextNode(dataCell));
-          return td;
-      }
-      
-      $(document).ready(function() {
-        $('#dataLoading').on("click",function(event){
-          LoadAdditionalData();
-          event.preventDefault();
-        });
-      });
-    </script>
+                    </div>
+                    <div id="NomParc" class="col-md-3">
+
+                    </div>
+                    <div class="infoParc col-md-6">
+
+                    </div>
+
+
+            </div>
+        </div>
+
+
 </body>
+
 </html>
